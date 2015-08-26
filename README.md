@@ -1,5 +1,5 @@
 # tweet_news
-A simple program that notifies the user of hot news on Twitter.
+### A simple program that notifies the user of hot news on Twitter.
 
 Download new tweets from a set of news agencies every X minutes.
 

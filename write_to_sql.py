@@ -105,7 +105,7 @@ class TweetActions(DatabaseActions):
         self.twtList = twtList
 
     def insert_tweets(self):
-		column_string = ",".join(self.TABLE_COLUMNS)
+    	column_string = ",".join(self.TABLE_COLUMNS)
 		for twt in self.twtList:    #rev = one dict in revList
             #print type(rev)
             # iterate through the dictionary, making a string of column keys and values

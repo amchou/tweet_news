@@ -106,24 +106,24 @@ class TweetActions(DatabaseActions):
 
     def insert_tweets(self):
     	column_string = ",".join(self.TABLE_COLUMNS)
-		for twt in self.twtList:    #rev = one dict in revList
-            #print type(rev)
-            # iterate through the dictionary, making a string of column keys and values
-			value_string_arr = []
-			for column in self.TABLE_COLUMNS:
-                #print column
-				try:
-					#twtstr = str(twt[column]).encode("utf-8")
-					twtstr = str(twt[column]).replace("'", "\\'")
-				except:
-					print 'twtstr exception! abandon to avoid null entry'
-					print twtstr
-					twtstr = ''
+	for twt in self.twtList:    #rev = one dict in revList
+		#print type(rev)
+		# iterate through the dictionary, making a string of column keys and values
+		value_string_arr = []
+		for column in self.TABLE_COLUMNS:
+			#print column
+			try:
+				#twtstr = str(twt[column]).encode("utf-8")
+				twtstr = str(twt[column]).replace("'", "\\'")
+			except:
+				print 'twtstr exception! abandon to avoid null entry'
+				print twtstr
+				twtstr = ''
                 #print revstr
 				value_string_arr.append("'" + twtstr + "'")
-			value_string = ",".join(value_string_arr)
-			insertCommand = self.INSERT_SQL_TEMPLATE %(column_string, value_string)
-			self.insert(insertCommand)
+		value_string = ",".join(value_string_arr)
+		insertCommand = self.INSERT_SQL_TEMPLATE %(column_string, value_string)
+		self.insert(insertCommand)
 
 
 
